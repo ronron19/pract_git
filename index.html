@@ -171,55 +171,88 @@
       right: 100px;
     }
 
-    /* SKILLS SECTION */
-    .skills {
+    /* SKILLS SECTION - SEPARATE WRAPPERS WITH LARGER TEXT */
+    .skills-container {
       margin-top: 80px;
       display: flex;
-      gap: 30px;
+      gap: 40px;
       flex-wrap: wrap;
       position: relative;
       z-index: 2;
     }
 
-    .skill-box {
+    /* Individual wrapper/box for each skill category */
+    .skill-wrapper {
       flex: 1;
-      min-width: 300px;
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      min-width: 350px;
+      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      border-radius: 25px;
+      padding: 35px 30px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(106, 17, 203, 0.2);
     }
 
-    .skill-box h2 {
-      margin-bottom: 20px;
+    .skill-wrapper:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 45px rgba(0,0,0,0.2);
+    }
+
+    .skill-wrapper h2 {
+      margin-bottom: 25px;
       color: #3b2f4a;
-      font-size: 22px;
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 1px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      border-bottom: 3px solid #6a11cb;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 12px;
     }
 
     .skill {
-      margin-bottom: 15px;
+      margin-bottom: 22px;
     }
 
     .skill-name {
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+    }
+
+    .skill-name span:first-child {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-name span:last-child {
+      font-weight: 700;
+      color: #6a11cb;
+      font-size: 17px;
     }
 
     .bar {
       width: 100%;
-      height: 8px;
-      background: #eee;
+      height: 12px;
+      background: #e8e8e8;
       border-radius: 10px;
       overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .fill {
       height: 100%;
       background: linear-gradient(45deg, #6a11cb, #2575fc);
       border-radius: 10px;
+      transition: width 0.5s ease;
     }
 
     /* RESPONSIVE */
@@ -238,11 +271,37 @@
         height: 250px;
       }
 
-      .skills {
+      .skills-container {
         flex-direction: column;
+        gap: 30px;
+      }
+
+      .skill-wrapper {
+        min-width: auto;
+      }
+
+      .skill-wrapper h2 {
+        font-size: 28px;
+      }
+
+      .skill-name {
+        font-size: 16px;
       }
     }
 
+    @media(max-width: 480px) {
+      .wrapper {
+        padding: 25px;
+      }
+      
+      .skill-wrapper {
+        padding: 25px 20px;
+      }
+      
+      .skill-wrapper h2 {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 
@@ -268,7 +327,7 @@
         <a href="#">Contact</a>
         <a href="#">Info</a>
         <a href="#">Skills</a>
-        <a href="#" class="btn">Projects</a>
+        <a href="#" class="btn" style="color: white;">Projects</a>
       </div>
     </div>
 
@@ -281,7 +340,7 @@
           and develop my skills in a dynamic work environment, eager to contribute to
           success while continuously learning and growing.
         </p>
-        <a href="#" class="btn">Projects</a>
+        <a href="#" class="btn" style="color: white;">Projects</a>
       </div>
 
       <div class="hero-image">
@@ -289,16 +348,16 @@
       </div>
     </div>
 
-    <!-- SKILLS SECTION (FIXED INSIDE WRAPPER) -->
-    <div class="skills">
+    <!-- SKILLS SECTION - SEPARATE WRAPPERS/CONTAINERS FOR EACH SKILL -->
+    <div class="skills-container">
 
-      <!-- TECHNICAL SKILLS -->
-      <div class="skill-box">
-        <h2>Technical Skills</h2>
+      <!-- TECHNICAL SKILLS - SEPARATE BOX -->
+      <div class="skill-wrapper">
+        <h2>⚙️ Technical Skills</h2>
 
         <div class="skill">
           <div class="skill-name">
-            <span>Web Development (PHP)</span>
+            <span>💻 Web Development (PHP)</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -306,7 +365,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>SQL Query</span>
+            <span>🗄️ SQL Query</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -314,7 +373,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>Microsoft Office</span>
+            <span>📊 Microsoft Office</span>
             <span>90%</span>
           </div>
           <div class="bar"><div class="fill" style="width:90%"></div></div>
@@ -322,7 +381,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>Computer Literate</span>
+            <span>🖥️ Computer Literate</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -330,7 +389,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>Documentation</span>
+            <span>📝 Documentation</span>
             <span>85%</span>
           </div>
           <div class="bar"><div class="fill" style="width:85%"></div></div>
@@ -338,13 +397,13 @@
 
       </div>
 
-      <!-- SOFT SKILLS -->
-      <div class="skill-box">
-        <h2>Soft Skills</h2>
+      <!-- SOFT SKILLS - SEPARATE BOX -->
+      <div class="skill-wrapper">
+        <h2>🤝 Soft Skills</h2>
 
         <div class="skill">
           <div class="skill-name">
-            <span>Adaptable</span>
+            <span>🔄 Adaptable</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -352,7 +411,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>Communication</span>
+            <span>💬 Communication</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -360,7 +419,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>Teamwork</span>
+            <span>👥 Teamwork</span>
             <span>80%</span>
           </div>
           <div class="bar"><div class="fill" style="width:80%"></div></div>
@@ -368,7 +427,7 @@
 
         <div class="skill">
           <div class="skill-name">
-            <span>General Knowledge</span>
+            <span>🧠 General Knowledge</span>
             <span>90%</span>
           </div>
           <div class="bar"><div class="fill" style="width:90%"></div></div>
