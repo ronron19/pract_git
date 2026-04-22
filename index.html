@@ -91,16 +91,32 @@
       text-align: center;
     }
 
-    .hero-image img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 20px;
-      
-      /* BLENDING EFFECT */
-      background: transparent;
-      mix-blend-mode: multiply;
-      filter: contrast(1.05) saturate(1.1) drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-    }
+  .hero-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 25px;
+
+  /* REMOVE HARSH LOOK */
+  background: transparent;
+
+  /* BLENDING INTO THEME */
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(106,17,203,0.15), rgba(37,117,252,0.15));
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+  /* SOFT MODERN EFFECT */
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255,255,255,0.25);
+
+  /* IMAGE FEEL */
+  object-fit: cover;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
 
     .shape1, .shape2 {
       position: absolute;
