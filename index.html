@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Website Design</title>
+  <title>Latorre Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -15,10 +15,11 @@
 
     body {
       background: linear-gradient(135deg, #6a11cb, #2575fc);
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 40px 0;
     }
 
     .wrapper {
@@ -91,7 +92,6 @@
       max-width: 400px;
     }
 
-    /* PROFILE IMAGE (CIRCLE) */
     .hero-image {
       flex: 1;
       text-align: center;
@@ -102,12 +102,10 @@
       height: 320px;
       object-fit: cover;
       border-radius: 50%;
-
       border: 6px solid rgba(255, 255, 255, 0.85);
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       background: #fff;
       padding: 8px;
-
       animation: float 4s ease-in-out infinite;
     }
 
@@ -116,12 +114,7 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-    }
-
-    /* ORIGINAL SHAPES */
+    /* SHAPES */
     .shape1, .shape2 {
       position: absolute;
       border-radius: 50%;
@@ -145,7 +138,7 @@
       right: -100px;
     }
 
-    /* NEW BACKGROUND CIRCLES */
+    /* BACKGROUND CIRCLES */
     .circle-bg {
       position: absolute;
       border-radius: 50%;
@@ -178,6 +171,60 @@
       right: 100px;
     }
 
+    /* ========================= */
+    /* SKILLS SECTION */
+    /* ========================= */
+
+    .skills {
+      margin-top: 80px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .skill-box {
+      flex: 1;
+      min-width: 300px;
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .skill-box h2 {
+      margin-bottom: 20px;
+      color: #3b2f4a;
+      font-size: 22px;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      border-radius: 10px;
+    }
+
     /* RESPONSIVE */
     @media(max-width: 768px) {
       .hero {
@@ -202,7 +249,7 @@
 
   <div class="wrapper">
 
-    <!-- BACKGROUND SHAPES -->
+    <!-- BACKGROUND -->
     <div class="shape1"></div>
     <div class="shape2"></div>
 
@@ -239,6 +286,95 @@
       <div class="hero-image">
         <img src="src/images/gradpic.jpg" alt="Profile Picture">
       </div>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <div class="skills">
+
+      <!-- TECHNICAL SKILLS -->
+      <div class="skill-box">
+        <h2>Technical Skills</h2>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Web Development (PHP)</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>SQL Query</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Microsoft Office</span>
+            <span>90%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Computer Literate</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Documentation</span>
+            <span>85%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:85%"></div></div>
+        </div>
+
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="skill-box">
+        <h2>Soft Skills</h2>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Adaptable</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Communication</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Teamwork</span>
+            <span>80%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>General Knowledge</span>
+            <span>90%</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
