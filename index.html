@@ -29,8 +29,10 @@
       padding: 40px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
       position: relative;
+      overflow: hidden;
     }
 
+    /* NAV */
     .nav {
       display: flex;
       justify-content: space-between;
@@ -63,11 +65,14 @@
       font-size: 14px;
     }
 
+    /* HERO */
     .hero {
       display: flex;
       align-items: center;
       margin-top: 60px;
       gap: 40px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-text {
@@ -86,26 +91,42 @@
       max-width: 400px;
     }
 
+    /* PROFILE IMAGE (CIRCLE) */
     .hero-image {
       flex: 1;
       text-align: center;
     }
 
     .hero-image img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 20px;
-      
-      /* BLENDING EFFECT */
-      background: transparent;
-      mix-blend-mode: multiply;
-      filter: contrast(1.05) saturate(1.1) drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+
+      border: 6px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      background: #fff;
+      padding: 8px;
+
+      animation: float 4s ease-in-out infinite;
     }
 
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+    }
+
+    /* ORIGINAL SHAPES */
     .shape1, .shape2 {
       position: absolute;
       border-radius: 50%;
-      z-index: -1;
+      z-index: 0;
+      opacity: 0.4;
     }
 
     .shape1 {
@@ -124,6 +145,40 @@
       right: -100px;
     }
 
+    /* NEW BACKGROUND CIRCLES */
+    .circle-bg {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.12;
+      filter: blur(1px);
+    }
+
+    .c1 {
+      width: 300px;
+      height: 300px;
+      background: #6a11cb;
+      top: 120px;
+      left: 60px;
+    }
+
+    .c2 {
+      width: 220px;
+      height: 220px;
+      background: #2575fc;
+      bottom: 80px;
+      left: 45%;
+    }
+
+    .c3 {
+      width: 160px;
+      height: 160px;
+      background: #ff6b6b;
+      top: 180px;
+      right: 100px;
+    }
+
+    /* RESPONSIVE */
     @media(max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -133,17 +188,29 @@
       .hero-text h1 {
         font-size: 40px;
       }
+
+      .hero-image img {
+        width: 250px;
+        height: 250px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
   <div class="wrapper">
+
+    <!-- BACKGROUND SHAPES -->
     <div class="shape1"></div>
     <div class="shape2"></div>
 
-    <!-- NAVBAR -->
+    <div class="circle-bg c1"></div>
+    <div class="circle-bg c2"></div>
+    <div class="circle-bg c3"></div>
+
+    <!-- NAV -->
     <div class="nav">
       <div class="logo">MY WEBSITE</div>
 
@@ -153,11 +220,11 @@
         <a href="#">Contact</a>
         <a href="#">Info</a>
         <a href="#">Skills</a>
-        <a href="#" class="btn" style="color: white;">Projects</a>
+        <a href="#" class="btn">Projects</a>
       </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div class="hero">
       <div class="hero-text">
         <h1>Latorre<br>Ahron</h1>
