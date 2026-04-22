@@ -33,17 +33,6 @@
       overflow: hidden;
     }
 
-    .skillwrapper {
-      width: 90%;
-      max-width: 1200px;
-      background: #f3f3f3;
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      position: relative;
-      overflow: hidden;
-    }
-
     /* NAV */
     .nav {
       display: flex;
@@ -182,10 +171,7 @@
       right: 100px;
     }
 
-    /* ========================= */
     /* SKILLS SECTION */
-    /* ========================= */
-
     .skills {
       margin-top: 80px;
       display: flex;
@@ -251,6 +237,10 @@
         width: 250px;
         height: 250px;
       }
+
+      .skills {
+        flex-direction: column;
+      }
     }
 
   </style>
@@ -299,10 +289,7 @@
       </div>
     </div>
 
-  </div>
-   <div class="skillwrapper"></div>
-
-    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION (FIXED INSIDE WRAPPER) -->
     <div class="skills">
 
       <!-- TECHNICAL SKILLS -->
